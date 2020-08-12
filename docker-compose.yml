@@ -7,9 +7,9 @@ services:
       - ./tmp/db:/var/lib/mysql
     restart: always
     environment:
-      MYSQL_USER: covidshield
-      MYSQL_DATABASE: covidshield
-      MYSQL_PASSWORD: covidshield
+      MYSQL_USER: mytrace
+      MYSQL_DATABASE: mytrace
+      MYSQL_PASSWORD: mytr4c3!c0v1d19
       MYSQL_RANDOM_ROOT_PASSWORD: "yes"
   key-retrieval:
     build:
@@ -26,9 +26,9 @@ services:
       - mysql
     restart: always
     environment:
-      ECDSA_KEY: 30770201010420a6885a310b694b7bb4ba985459de1e79446dddcd1247c62ece925402b362a110a00a06082a8648ce3d030107a1440342000403eb64f714c4b4ed394331c26c31b7ce7156d00fb28982ad2679a87eaa1a3869802fbeb1d7ee28002762921929c3f7603672d535fcac3d24d57afbb4e2d97f5a
-      DATABASE_URL: covidshield:covidshield@tcp(mysql)/covidshield
-      RETRIEVE_HMAC_KEY: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+      ECDSA_KEY: 30770201010420d918755c21e8aab62894fdfe7bb7bfeaf4eac396eee5d35b613d7d25958a6c0da00a06082a8648ce3d030107a14403420004f8389bd70e10aacb29ecc70c25e813991383e852409b661924b8928bad46f2715a8f06c25e9f72780aec6f4f3e06266cc28442a8d621a048e58958662f1221cc
+      DATABASE_URL: mytrace:mytr4c3!c0v1d19@tcp(mysql)/mytrace
+      RETRIEVE_HMAC_KEY: c05ad220c098c3b03fb209396eb696b73520c3314843d5a2eda5ae2ff7b05841
       METRIC_PROVIDER: ""
       TRACER_PROVIDER: ""
   key-submission:
@@ -50,7 +50,7 @@ services:
       - mysql
     restart: always
     environment:
-      DATABASE_URL: covidshield:covidshield@tcp(mysql)/covidshield
-      KEY_CLAIM_TOKEN: thisisatoken=302
+      DATABASE_URL: mytrace:mytr4c3!c0v1d19@tcp(mysql)/mytrace
+      KEY_CLAIM_TOKEN: WAgQ2XbXilkdQidT9Hw2=502
       METRIC_PROVIDER: ""
       TRACER_PROVIDER: ""
