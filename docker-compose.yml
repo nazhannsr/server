@@ -9,7 +9,7 @@ services:
     environment:
       MYSQL_USER: mytrace
       MYSQL_DATABASE: mytrace
-      MYSQL_PASSWORD: mytr4c3!c0v1d19
+      MYSQL_PASSWORD: mytrace
       MYSQL_RANDOM_ROOT_PASSWORD: "yes"
   key-retrieval:
     build:
@@ -27,7 +27,7 @@ services:
     restart: always
     environment:
       ECDSA_KEY: 30770201010420d918755c21e8aab62894fdfe7bb7bfeaf4eac396eee5d35b613d7d25958a6c0da00a06082a8648ce3d030107a14403420004f8389bd70e10aacb29ecc70c25e813991383e852409b661924b8928bad46f2715a8f06c25e9f72780aec6f4f3e06266cc28442a8d621a048e58958662f1221cc
-      DATABASE_URL: mytrace:mytr4c3!c0v1d19@tcp(mysql)/mytrace
+      DATABASE_URL: mytrace:mytrace@tcp(mysql)/mytrace
       RETRIEVE_HMAC_KEY: c05ad220c098c3b03fb209396eb696b73520c3314843d5a2eda5ae2ff7b05841
       METRIC_PROVIDER: ""
       TRACER_PROVIDER: ""
@@ -50,7 +50,7 @@ services:
       - mysql
     restart: always
     environment:
-      DATABASE_URL: mytrace:mytr4c3!c0v1d19@tcp(mysql)/mytrace
+      DATABASE_URL: mytrace:mytrace@tcp(mysql)/mytrace
       KEY_CLAIM_TOKEN: WAgQ2XbXilkdQidT9Hw2=502
       METRIC_PROVIDER: ""
       TRACER_PROVIDER: ""
